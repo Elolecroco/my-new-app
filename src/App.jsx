@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 import MyPokemonCard from './components/PokemonCard'
 import Navbar from './components/Navbar'
+import { func } from 'prop-types'
 function App() {
   const pokemonList = [
     {
@@ -29,7 +31,16 @@ function App() {
     },
   ];
 
+  useEffect(
+      () => {
+        alert("Hello fellow pokemon trainer!")
+      },
+      []
+    )
+
   const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
+
+  pokemonList[currentPokemonIndex].name === "Pikachu" ? alert("Pika, pikachuuuuu!!") : "";
 
   return (
   <div>
