@@ -2,9 +2,9 @@ import PropTypes from "prop-types"
 
 function MyPokemonCard({ pokemon }) {
     return (
-        <figure>  
-        {pokemon.imgSrc ? <img src={pokemon.imgSrc} alt={pokemon.name}/> : <p>???</p>}
-        <figcaption>{pokemon.name}</figcaption>
+        <figure className="pokemonCard">  
+        {pokemon.imgSrc ? <img src={pokemon.imgSrc} className="pokemonLook" alt={pokemon.name}/> : <p className="nonexistent">???</p>}
+        <figcaption className="pokemonName">{pokemon.name}</figcaption>
         </figure>)
 }
 
