@@ -1,12 +1,11 @@
-function Navbar({ name, index, type, setCurrentPokemonIndex, currentPokemonIndex, setCurrentPokemonType, currentPokemonType, pokemonList }) {
+function Navbar({ name, index, type, setCurrentPokemonIndex, currentPokemonIndex}) {
     // Bouton par pokémon
+    
     const currentPokemon = () => {
         setCurrentPokemonIndex(currentPokemonIndex = index);
-        const currentPokemonType = type || 'default'
-        setCurrentPokemonType(currentPokemonType)
     }
     return (
-            <button className="button" onClick={currentPokemon}>{name}</button>
+            <button className={`button ${type}`} onClick={currentPokemon}>{name}</button>
     )
     
     // Bouton précédent

@@ -1,0 +1,228 @@
+/* VARIABLES */
+$darkest-color: black;
+$lightest-color: white;
+$pokeCard-bg: rgba(53, 53, 53, 0.40);
+$background-lightest-color: rgba(255, 255, 255, 0.40);
+$background-color_7: rgba(255, 255, 255, 0.25);
+$background-color_8: rgba(255, 255, 255, 0.55);
+$grassType-color: rgba(120, 200, 80, 0.80);
+$fireType-color: rgba(240, 128, 48, 0.80);
+$waterType-color: rgba(104, 144, 240, 0.80);
+$electricType-color: rgba(248, 208, 48, 0.80);
+
+.pokemonBody {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.group-btn {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.pokemonList {
+	width: 95%;
+	height: 95%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+}
+.pokemonCardContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+.pokemonCard {
+	width: 20em;
+	height: 30em;
+	margin: 1em auto;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: $pokeCard-bg;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+	backdrop-filter: blur(15px);
+	border: 3px solid transparent;
+	border-radius: 8px;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		z-index: 10;
+		background-color: $background-lightest-color;
+		transform: scale(1.1);
+		.pokeName {
+			color: $darkest-color;
+		}
+		.desc {
+			color: $darkest-color;
+		}
+		.description {
+			color: $darkest-color;
+		}
+		.pokemonLook {
+			filter: drop-shadow(0 0 1em white);
+		}
+	}
+}
+.pokemonCard.Grass {
+	&:hover {
+		filter: drop-shadow(0px 0px 5px $grassType-color) drop-shadow(0px 0px 15px $grassType-color);
+		border: 3px solid $grassType-color;
+	}
+}
+.pokemonCard.Fire {
+	&:hover {
+		filter: drop-shadow(0px 0px 5px $fireType-color) drop-shadow(0px 0px 15px $fireType-color);
+		border: 3px solid $fireType-color;
+	}
+}
+.pokemonCard.Water {
+	&:hover {
+		filter: drop-shadow(0px 0px 5px $waterType-color) drop-shadow(0px 0px 15px $waterType-color);
+		border: 3px solid $waterType-color;
+	}
+}
+.pokemonCard.Electric {
+	&:hover {
+		filter: drop-shadow(0px 0px 5px $electricType-color) drop-shadow(0px 0px 15px $electricType-color);
+		border: 3px solid $electricType-color;
+	}
+}
+.pokeName-container {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.pokeName {
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.desc {
+	margin: 0;
+	width: 30%;
+	height: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 0.8em;
+	color: $lightest-color;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 4px;
+}
+.desc.Grass {
+	background-color: $grassType-color;
+}
+.desc.Fire {
+	background-color: $fireType-color;
+}
+.desc.Water {
+	background-color: $waterType-color;
+}
+.desc.Electric {
+	background-color: $electricType-color;
+}
+.pokemonLook {
+	margin-bottom: 1em;
+	padding: 1em;
+	width: 80%;
+	border: 2px solid rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	transition: 0.2s ease-in-out;
+}
+.desc-container {
+	height: 5em;
+	width: 80%;
+	padding: 1em;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	background-color: $background-color_7;
+	border-radius: 4px;
+}
+.description {
+	margin: 0;
+}
+.nonexistent {
+	color: $darkest-color;
+}
+.nonexistentType {
+	color: $darkest-color;
+	margin: 0;
+}
+.boutons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.button {
+	width: 10em;
+	margin: 1em;
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;
+	color: $lightest-color;
+	background: rgba(255, 255, 255, 0.50);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(3.1px);
+	backdrop-filter: blur(3.1px);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	cursor: pointer;
+	&:hover {
+		background-color: $background-color_8;
+	}
+	&:focus {
+		background-color: $background-color_8;
+	}
+}
+.button.Grass {
+	background: rgba(120, 200, 80, 0.50);
+	&:hover {
+		background-color: $grassType-color;
+	}
+	&:focus {
+		background-color: $grassType-color;
+	}
+}
+.button.Fire {
+	background: rgba(240, 128, 48, 0.50);
+	&:hover {
+		background-color: $fireType-color;
+	}
+	&:focus {
+		background-color: $fireType-color;
+	}
+}
+.button.Water {
+	background: rgba(104, 144, 240, 0.50);
+	&:hover {
+		background-color: $waterType-color;
+	}
+	&:focus {
+		background-color: $waterType-color;
+	}
+}
+.button.Electric {
+	background: rgba(248, 208, 48, 0.50);
+	&:hover {
+		background-color: $electricType-color;
+	}
+	&:focus {
+		background-color: $electricType-color;
+	}
+}

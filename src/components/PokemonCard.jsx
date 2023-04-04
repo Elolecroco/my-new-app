@@ -1,14 +1,17 @@
 import PropTypes from "prop-types"
 
-function MyPokemonCard({ pokemon }) {
+function MyPokemonCard({ imgSrc, name, type, description }) {
     return (
-        <figure className="pokemonCard">  
-        {pokemon.imgSrc ? <img src={pokemon.imgSrc} className="pokemonLook" alt={pokemon.name}/> : <p className="nonexistent">???</p>}
-        <div className="description">
-            <figcaption className="pokemonName">{pokemon.name}</figcaption>
-        {pokemon.type ? <p className="pokeType">{pokemon.type}</p> : <p className="nonexistentType">???</p>}    
-        </div>
-        </figure>)
+        <div className={`pokemonCard ${type}`}> 
+            <div className="pokeName-container">
+                <p className="pokeName">{name}</p>
+                {type ? <p className= {`desc ${type}`}>{type}</p> : <p className="nonexistentType">???</p>} 
+            </div>
+            {imgSrc ? <img src={imgSrc} className={`pokemonLook ${type}`} alt={name}/> : <p className="nonexistent">???</p>}
+            <div className="desc-container">
+                <p className="description">{description}</p>
+            </div>
+        </div>)
 }
 
 MyPokemonCard.propTypes = {
@@ -16,6 +19,7 @@ MyPokemonCard.propTypes = {
         name: PropTypes.string.isRequired,
         imgSrc: PropTypes.string,
         type: PropTypes.string,
+        description: PropTypes.string,
     }).isRequired,
 }
 
