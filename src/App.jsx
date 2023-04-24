@@ -7,9 +7,12 @@ import FilterType from './components/Filter'
 
 function App() {
   
-  const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
+  const [currentPokemonIndex, setCurrentPokemonIndex] = useState(null);
+  const [selectedPokemon, setSelectedPokemon] = useState(null)
   const [filteredPokemonList, setFilteredPokemonList] = useState(pokemonList);
   const [selectedType, setSelectedType] = useState(null);
+
+  console.log(currentPokemonIndex)
 
   return (
     <div className='pokemonBody'>
@@ -29,7 +32,10 @@ function App() {
             index={index}
             type={pokemon.type}
             currentPokemonIndex={currentPokemonIndex}
-            setCurrentPokemonIndex={setCurrentPokemonIndex} />
+            setCurrentPokemonIndex={setCurrentPokemonIndex}
+            selectedPokemon={selectedPokemon} 
+            setSelectedPokemon={setSelectedPokemon}
+             />
           ))}
         </div>
       </div>

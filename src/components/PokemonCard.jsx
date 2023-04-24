@@ -20,7 +20,7 @@ MyPokemonCard.propTypes = {
         imgSrc: PropTypes.string,
         type: PropTypes.string,
         description: PropTypes.string,
-    }).isRequired,
+    }),
 }
 
 export default MyPokemonCard;
